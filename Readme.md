@@ -203,7 +203,7 @@ Connection Closed
 
 ---
 
-> 🛈 This tool was inspired by `black hat python 2nd edition book`.
+> 🛈 This tool was inspired by `black hat python 2nd edition` book.
 
 
 
