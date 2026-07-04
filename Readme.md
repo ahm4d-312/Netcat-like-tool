@@ -142,9 +142,9 @@ Workflow:
 
 - Receiver side
 	- The receiver reads and parses the header to understand:
-    1. What the file is called
-    2. How large the file is
-    3. How many bytes to expect
+	  1. What the file is called
+	  2. How large the file is
+	  3. How many bytes to expect
 
 - Using this information, the receiver prepares to safely receive the file
 - The sender then streams the actual file contents in **4096-byte chunks**
@@ -201,12 +201,9 @@ Pictures
 Connection Closed
 ```
 
-
 ---
 
-# License
+> [!info] This tool was inspired by `black hat python 2nd edition book`.
 
-This project is released under the MIT License.
-This tool was inspired by `black hat python 2nd edition book`.
 
 
