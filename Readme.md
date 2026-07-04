@@ -3,12 +3,11 @@
 A lightweight **Python implementation of Netcat (nc)** that supports:
 - Interactive remote command shell
 - File uploads
-- File upload + shell in a single connection
+- File upload + command shell in a single connection
 - Cross-platform Python implementation
 - Simple command-line interface using `argparse`
 
 > **Disclaimer**
->
 > This project is intended for **learning, experimentation, and use on systems you own or have explicit permission to test.** Do not use it for unauthorized access or activities that violate laws or policies.
 
 ---
@@ -132,22 +131,20 @@ Workflow:
 
 ---
 
-# File Transfer Protocol
+# File Uplaod (how the files is benig transfered)
 
 - Sender side
 	- The sender first builds a **fixed header** containing file metadata:
 	  1. Filename length (4 bytes)
 	  2. Filename
 	  3. File size (8 bytes)
-	
 	- This header is sent to the receiver before any file data
 
 - Receiver side
 	- The receiver reads and parses the header to understand:
-	 1. What the file is called
-	 2. How large the file is
-	 3. How many bytes to expect
-
+    1. What the file is called
+    2. How large the file is
+    3. How many bytes to expect
 
 - Using this information, the receiver prepares to safely receive the file
 - The sender then streams the actual file contents in **4096-byte chunks**
@@ -155,18 +152,16 @@ Workflow:
 - Once all bytes are received, the file transfer is complete
 ---
 
-# How It Works
+# How the tool works
 
-The application operates in two modes.
+The tool operates in two modes.
 
 ## Server (Listener)
-
 - Opens a TCP socket
 - Waits for a client
 - Receives uploads and/or executes commands
 
 ## Client
-
 - Connects to the server
 - Uploads files if requested
 - Sends commands
@@ -190,7 +185,7 @@ python nc.py -t 192.168.1.108 -c
 
 Interactive session:
 
-```text
+```bash
 > whoami
 user
 
